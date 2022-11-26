@@ -2,6 +2,13 @@ namespace StoreTrybe.Domain.Entidades
 {
     public class Cliente : Base
     {
+        public Cliente(string nome, string cpf, string email)
+        {
+            Nome = nome;
+            CPF = cpf;
+            Email = email;
+        }
+
         public string Nome { get; set; }
         public string Sobrenome { get; set; }
         public DateTime DataNascimento { get; set; }
