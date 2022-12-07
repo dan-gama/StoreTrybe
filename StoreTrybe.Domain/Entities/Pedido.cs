@@ -17,8 +17,8 @@ namespace StoreTrybe.Domain.Entities
         public string Numero { get; private set; }
         public DateTime DataCompra { get; private set; }
         public EStatusPedido Status { get; private set; }
-        public IReadOnlyCollection<PedidoItem> Items => _itens.ToArray();
         public Entrega Entrega { get; private set; }
+        public IReadOnlyCollection<PedidoItem> Items => _itens.ToArray();
         public void AdicionarItem(Produto produto, decimal quantidade)
         {
             var item = new PedidoItem(produto, quantidade);
