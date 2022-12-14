@@ -10,6 +10,7 @@ namespace StoreTrybe.Domain.Entities
         {
             Cliente = cliente;
             Status = EStatusPedido.Criado;
+            Numero = Guid.NewGuid().ToString();
             _itens = new List<PedidoItem>();
         }
 
@@ -23,6 +24,15 @@ namespace StoreTrybe.Domain.Entities
         {
             var item = new PedidoItem(produto, quantidade);
             _itens.Add(item);
+        }
+
+        public void ValidarEntidade()
+        {
+            if (String.IsNullOrEmpty(Numero))
+                AdicionarNotificacao("Número", "Número de pedido inválido");
+
+            // Seta se a entidade é valida
+            VerificarEntidade();
         }
     }
 }

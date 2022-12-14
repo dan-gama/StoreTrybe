@@ -1,6 +1,8 @@
+using StoreTrybe.Domain.Notifications;
+
 namespace StoreTrybe.Domain.Entities
 {
-    public abstract class Base
+    public abstract class Base : Notificacao
     {
         protected Base()
         {

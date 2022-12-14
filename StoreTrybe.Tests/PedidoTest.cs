@@ -6,7 +6,7 @@ namespace StoreTrybe.Tests;
 public class PedidoTest
 {
     [Fact]
-    public void VerificarCodigoProduto_QuandoPedidoCriado()
+    public void PedidoOk_QuandoPedidoCadastrado()
     {
         // Objeto de nome
         Nome nome = new Nome("Danilo", "Gama");
@@ -26,6 +26,11 @@ public class PedidoTest
 
         // Objeto de cliente        
         Cliente cliente = new Cliente(nome, "25994568735", "danilo.gama@gmail.com", "61999445059");
-        cliente.AdicionarEndereco(endereco);
+        Pedido pedido = new Pedido(cliente);
+
+
+        pedido.ValidarEntidade();
+
+        Assert.True(pedido.EntidadeValida);
     }
 }

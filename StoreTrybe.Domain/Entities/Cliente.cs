@@ -23,5 +23,20 @@ namespace StoreTrybe.Domain.Entities
         {
             _enderecos.Add(endereco);
         }
+
+        public void ValidarEntidade()
+        {
+            if (String.IsNullOrEmpty(Nome.PrimeiroNome))
+                AdicionarNotificacao("Primeiro Nome", "O primeiro nome é obrigatório");
+
+            if (String.IsNullOrEmpty(Nome.SobreNome))
+                AdicionarNotificacao("Sobrenome", "O sobrenome é obrigatório");
+
+            if (String.IsNullOrEmpty(CPF))
+                AdicionarNotificacao("CPF", "O CPF é obrigatório");
+
+            // Seta se a entidade é valida
+            VerificarEntidade();
+        }
     }
 }
