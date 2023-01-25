@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using StoreTrybe.API.Services;
 
 namespace StoreTrybe.API.Controllers;
 
@@ -10,6 +11,10 @@ public class ClienteController : ControllerBase
     [Route("")]
     public ActionResult cliente()
     {
-        return Ok();
+        ClienteService serviceCliente = new ClienteService();
+        var retorno = serviceCliente.GetAll();
+
+        return Ok(retorno);
+
     }
 }

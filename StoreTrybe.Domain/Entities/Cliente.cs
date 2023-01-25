@@ -12,6 +12,7 @@ namespace StoreTrybe.Domain.Entities
             CPF = cpf;
             Email = email;
             Telefone = telefone;
+            _enderecos = new List<Endereco>();
         }
 
         public Nome Nome { get; private set; }
